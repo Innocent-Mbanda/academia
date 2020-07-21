@@ -1,5 +1,7 @@
 package com.academia.learning.tutoring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Date;
 @Entity
@@ -10,6 +12,7 @@ public class Course {
     String name;
     @ManyToOne
     @JoinColumn(name = "teacherId")
+    @JsonIgnoreProperties("courses")
     Teacher teacher;
     Date time;
 

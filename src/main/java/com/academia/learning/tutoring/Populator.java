@@ -19,7 +19,9 @@ public class Populator {
     TeacherRepo teacherRepo;
     private void seedTeacherTable() {
         Teacher teacher = new Teacher(1l,"BOB","MBA");
+        Teacher teacher2 = new Teacher(2l,"Innocent","BA");
         teacherRepo.save(teacher);
+        teacherRepo.save(teacher2);
 
     }
 

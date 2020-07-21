@@ -1,5 +1,7 @@
 package com.academia.learning.tutoring.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,6 +14,8 @@ public class Teacher {
     String name;
     String qualification;
     @OneToMany (mappedBy = "teacher", cascade = CascadeType.ALL)
+
+    @JsonIgnoreProperties("teacher")
     Collection<Course> courses;
 
     public Teacher( Long teacherId, String name, String qualification){
