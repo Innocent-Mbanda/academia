@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -46,5 +47,16 @@ public class CourseDaoImpl implements CourseDao {
 
     }
 
-  }
+    @Override
+    public List<Course> search(String courseOrTeacherName) {
+        return null;
+    }
+
+    @Override
+    public List<Course> search(String courseName, String teacherName) {
+        Optional<Teacher> teacher =teacherDaoimpl.get(teacherName);
+        return courseRepo.findByNameAndTeacher(courseName,teacher.get());
+    }
+
+}
 

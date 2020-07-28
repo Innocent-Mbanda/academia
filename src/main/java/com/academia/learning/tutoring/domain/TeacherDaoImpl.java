@@ -38,4 +38,11 @@ public class TeacherDaoImpl implements TeacherDao {
     public void delete(Object o) {
 
     }
+
+    @Override
+    public Optional get(String name) {
+        return teacherRepo.findByName(name);
+    }
+
+
 }

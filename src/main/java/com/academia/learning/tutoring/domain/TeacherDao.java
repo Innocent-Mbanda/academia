@@ -10,4 +10,6 @@ public interface TeacherDao <Teacher>{
     int save (Teacher teacher);
     void update(Teacher teacher);
     void delete (Teacher teacher);
+    Optional<Teacher> get(String name);
+
 }
